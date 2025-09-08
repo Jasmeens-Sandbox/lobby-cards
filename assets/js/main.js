@@ -46,4 +46,52 @@ async function renderGallery(year) {
     gallery.appendChild(grid);
 }
 
-renderGallery(1920);
+function createTimeline(startYear, endYear, onYearClick) {
+    const timeline = document.createElement('ul');
+    timeline.className = 'timeline';
+    for (let year = startYear; year <= endYear; year += 10) {
+        const longBar = document.createElement('li');
+        longBar.className = 'long-bar';
+        const label = document.createElement('a');
+        label.className = 'year-label';
+        label.textContent = year;
+        label.href = '#year-' + year;
+        label.style.textDecoration = 'none';
+        document.querySelector('#gallery-title').textContent = year;
+        label.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector('#gallery-title').textContent = year;
+            document.querySelectorAll('.year-label.active').forEach(function (el) {
+                el.classList.remove('active');
+            });
+            label.classList.add('active');
+            if (typeof onYearClick === 'function') {
+                onYearClick(year);
+            }
+        });
+
+        if (year === startYear) {
+            label.classList.add('active');
+        }
+
+        longBar.appendChild(label);
+        timeline.appendChild(longBar);
+        // 9 short bars (except after last decade)
+        if (year + 10 <= endYear) {
+            for (let i = 1; i <= 9; i++) {
+                const shortBar = document.createElement('li');
+                shortBar.className = 'short-bar';
+                timeline.appendChild(shortBar);
+            }
+        }
+    }
+    return timeline;
+}
+
+// Initial render
+const startYear = 1920;
+const endYear = 1980;
+const container = document.getElementById('timeline-container');
+container.appendChild(createTimeline(startYear, endYear, renderGallery));
+// Set initial gallery view
+renderGallery(startYear);

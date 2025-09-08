@@ -267,3 +267,66 @@ main {
 .fade-in.loaded {
   opacity: 1;
 }
+
+
+/* ==== Timeline ==== */
+
+#timeline-container {
+  padding-top: 25px;
+  background-color: #222;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.timeline {
+  --_long-bar-width: 2px;
+  --_long-bar-height: 40px;
+  --_short-bar-height: 20px;
+  --_short-bar-width: calc(var(--_long-bar-width) / 2);
+  --_bar-margin: 12px;
+  --_bar-color: #EFBF04;
+
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.long-bar {
+  width: var(--_long-bar-width);
+  min-width: var(--_long-bar-width);
+  height: var(--_long-bar-height);
+  margin-right: var(--_bar-margin);
+  background-color: var(--_bar-color);
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+}
+
+.short-bar {
+  width: var(--_short-bar-width);
+  min-width: var(--_short-bar-width);
+  height: var(--_short-bar-height);
+  margin-right: var(--_bar-margin);
+  background-color: var(--_bar-color);
+}
+
+.year-label {
+  color: var(--_bar-color);
+  bottom: calc(var(--_long-bar-height) + 5px);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  z-index: 2;
+  transition: color 0.2s, font-weight 0.2s;
+}
+
+.year-label.active {
+  color: #fff;
+  font-weight: bold;
+  /* text-shadow: 0 0 4px #EFBF04; */
+}

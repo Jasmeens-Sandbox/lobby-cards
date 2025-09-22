@@ -7,10 +7,11 @@
     <link rel="stylesheet" href="./assets/css/styles.css">
     <link rel="stylesheet" href="./assets/css/layout.css">
     <script src="./assets/js/main.js" defer></script>
-    <title>Home</title>
+    <title>Australian Lobby Cards</title>
 </head>
 
 <body>
+    <div id="loader" class="loader"></div>
 
     <div class="hero parallex-container">
         <div class="flex-container h-100vh">
@@ -18,30 +19,53 @@
                 <div class="flex__col">
                     <div class="hero__content">
                         <h1 class="hero__title">
-                            AUSTRALIAN LOBBY CARDS
+                            <span>AUSTRALIAN</span>
+                            <span>LOBBY CARDS</span>
                         </h1>
-                        <h3 class="hero__description">
+                        <h2 class="hero__description">
                             TIMELINE
-                        </h3>
-                        <p class="hero__action">Dive into history</p>
-                        <div class="arrow-down" onclick="arrowScroll()" title="Scroll Down">&#8595;</div>
+                        </h2>
+                        <p class="hero__action-description">Dive into history</p>
+                        <div class="hero__action-button" id="scroll-down-arrow">
+                            <span class="hero__action-button-span hero__action-button-span--1"></span>
+                            <span class="hero__action-button-span hero__action-button-span--2"></span>
+                            <span class="hero__action-button-span hero__action-button-span--3"></span>
+                            <span class="hero__action-button-span hero__action-button-span--4"></span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-     <div class="flex-container position-relative">
+    <div class="flex-container">
         <div class="flex__row h-100vh">
-            <div class="flex__col">
-                <h1 id="gallery-title">Title</h1>
-                <div id="gallery-container">images</div>
-                <div id="timeline-container"></div>
+            <div class="flex__col position-relative gallery-view">
+
+                <div class="timeline-burger-menu">
+                    <div id="timeline-button" class="timeline-button">
+                        <div class="bar1"></div>
+                        <div class="bar2"></div>
+                        <div class="bar3"></div>
+                    </div>
+
+                    <div id="timeline-menu" class="timeline-menu">
+                        <ul class="timeline-menu__list" id="timeline-list">
+                            <!-- Timeline items will be dynamically inserted here -->
+                        </ul>
+                    </div>
+                </div>
+
+                <h2 id="gallery-title" class="gallery-title">Title</h2>
+                <div id="gallery-container" class="gallery-container">
+                    <div class="gallery" id="gallery">
+                        <!-- Movie items will be dynamically inserted here -->
+                    </div>
+                </div>
+
+                <div id="timeline-container" class="timeline-container"></div>
             </div>
         </div>
     </div>
-    
-
 </body>
-
 </html>

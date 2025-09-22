@@ -43,10 +43,12 @@ The container is used for the overall layout and centers the content.*/
   padding: 0 var(--_x-pad);
 }
 
+
 .flex__col,
 .flex__col--12 {
   width: 100%;
 }
+
 
 /* === Column Width Modifiers ===
    These classes define different column widths based on the 12-column grid system.
@@ -64,3 +66,33 @@ The container is used for the overall layout and centers the content.*/
 .flex__col--9  { width: calc(100% / 12 * 9); } /* 9/12 width */
 .flex__col--10 { width: calc(100% / 12 * 10); } /* 10/12 width */
 .flex__col--11 { width: calc(100% / 12 * 11); } /* 11/12 width */
+
+@media (min-width: 576px) {
+  .flex__col-sm--1  { width: calc(100% / 12 * 1); }
+  .flex__col-sm--2  { width: calc(100% / 12 * 2); }
+  .flex__col-sm--3  { width: calc(100% / 12 * 3); }
+  .flex__col-sm--4  { width: calc(100% / 12 * 4); }
+  .flex__col-sm--5  { width: calc(100% / 12 * 5); }
+  .flex__col-sm--6  { width: calc(100% / 12 * 6); }
+  .flex__col-sm--7  { width: calc(100% / 12 * 7); }
+  .flex__col-sm--8  { width: calc(100% / 12 * 8); }
+  .flex__col-sm--9  { width: calc(100% / 12 * 9); }
+  .flex__col-sm--10 { width: calc(100% / 12 * 10); }
+  .flex__col-sm--11 { width: calc(100% / 12 * 11); }
+  .flex__col-sm--12 { width: 100%; }
+}
+
+@media (min-width: 768px) {
+  .flex__col-md--1  { width: calc(100% / 12 * 1); }
+  .flex__col-md--2  { width: calc(100% / 12 * 2); }
+  .flex__col-md--3  { width: calc(100% / 12 * 3); }
+  .flex__col-md--4  { width: calc(100% / 12 * 4); }
+  .flex__col-md--5  { width: calc(100% / 12 * 5); }
+  .flex__col-md--6  { width: calc(100% / 12 * 6); }
+  .flex__col-md--7  { width: calc(100% / 12 * 7); }
+  .flex__col-md--8  { width: calc(100% / 12 * 8); }
+  .flex__col-md--9  { width: calc(100% / 12 * 9); }
+  .flex__col-md--10 { width: calc(100% / 12 * 10); }
+  .flex__col-md--11 { width: calc(100% / 12 * 11); }
+  .flex__col-md--12 { width: 100%; }
+}

@@ -466,6 +466,123 @@ main {
     transform: rotate(45deg) translate(-8px, -8px);
 }
 
+/* ==== Modal ==== */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 99999;
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal__content {
+    position: relative;
+    background-color: var(--clr-black);
+    color: var(--clr-white);
+    margin: auto;
+    border: 1.5px solid var(--clr-grey-light);
+    border-radius: 12px;
+    width: 80%;
+    padding: 1rem;
+    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+.modal__details {
+    display: flex;
+    flex-direction: column;
+    margin-top: var(--space-m);
+    margin-bottom: var(--space-m);
+}
+
+.modal__title {
+    border-bottom: 1px solid var(--clr-white);
+    margin-bottom: var(--space-s);
+}
+
+.modal__body {
+    padding: var(--space-s);
+}
+
+.modal__image-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Background image (blurred & covers) */
+.modal__image-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(10px);
+    z-index: 1;
+}
+
+/* Foreground image (top center) */
+.modal__image-fg {
+    position: relative;
+    z-index: 2;
+    display: block;
+    margin: 20px auto;
+    max-width: 90%;
+    height: auto;
+}
+
+/* Modal object content link */
+.modal__source-link {
+    text-decoration: underline;
+}
+
+.modal__source-link:hover {
+    color: var(--clr-grey-light);
+}
+
+.modal__source-link:after {
+    content: "↗";
+}
+
+.modal__close {
+    color: var(--clr-white);
+    cursor: pointer;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+.modal__close:hover,
+.modal__close:focus {
+    color: var(--clr-grey);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Add Animation */
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+
+
 /* ==== Animations for images back and forth ==== */
 .animate {
     --translate-length: 50px;

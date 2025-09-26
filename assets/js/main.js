@@ -1,3 +1,32 @@
+// Modal functionality
+(function (modal) {
+
+    function show({ title, bodyImg, bodyText, bodyTextTitle, data }) {
+        document.getElementById("modal-title").textContent = title;
+        document.getElementById("modal-body-img-bg").src = bodyImg;
+        document.getElementById("modal-body-img-fg").src = bodyImg;
+        document.getElementById("modal-body-text").textContent = bodyText;
+        document.getElementById("modal-body-text-title").textContent = bodyTextTitle;
+        document.getElementById("modal-body-year").textContent = data?.year || "Unknown";
+        document.getElementById("modal-body-link").href = `https://www.collection.nfsa.gov.au/title/${data?.item?.id || ""}`;
+        document.getElementById("modal-body-countries").textContent = (data?.item?.countries || []).join(", ") || "Unknown";
+        document.getElementById("modal-body-languages").textContent = (data?.item?.languages || []).join(", ") || "English";
+        modalVisibility(true);
+
+        var span = document.getElementById("modal-close");
+        span.onclick = function () {
+            modalVisibility(false);
+        };
+    }
+
+    function modalVisibility(show) {
+        document.getElementById("modal").style.display = show || false ? "block" : "none";
+    }
+
+    modal.show = show;
+    modal.hide = modalVisibility;
+})(window.modal = window.modal || {});
+
 // API functionality
 (function (api) {
 
@@ -250,8 +279,9 @@
                     onYearClick(year);
                 }
 
-                //Hide toggle menu
+                // Hide modal and toggle menu
                 if (e.target === link2) showHide();
+                modal.hide();
             }
 
             link.addEventListener('click', (e) => handleYearClick(e, year, link, link2));
@@ -301,7 +331,13 @@
             wrapper.innerHTML = template;
 
             wrapper.querySelector('img').addEventListener('click', function () {
-                //Modal code will go here
+                modal.show({
+                    title: movie.title,
+                    bodyImg: movie.imageUrl,
+                    bodyText: movie.summary,
+                    bodyTextTitle: "Lobby Card Description",
+                    data: movie
+                });
             });
 
             gallery.appendChild(wrapper);

@@ -67,5 +67,36 @@
             </div>
         </div>
     </div>
+
+    <!-- The Modal -->
+    <div id="modal" class="modal">
+        <div class="modal__content flex-container">
+            <div class="modal__header">
+                <span class="modal__close" id="modal-close">&times;</span>
+                <h2 class="modal__title" id="modal-title">Modal Header</h2>
+            </div>
+            <div class="modal__body flex__row">
+                <div class="flex__col--12 flex__col-md--6 modal__image-container">
+                    <img id="modal-body-img-bg" class="modal__image-bg"
+                        src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png" alt="">
+                    <img id="modal-body-img-fg" class="modal__image-fg"
+                        src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png" alt="">
+                </div>
+                <div class="flex__col--12 flex__col-md--6">
+                    <h3 class="modal__body-text-title" id="modal-body-text-title">N/A</h3>
+                    <p class="modal__body-text" id="modal-body-text"></p>
+
+                    <div class="modal__details">
+                        <h4>Production Year: <span id="modal-body-year"></span></h4>
+                        <h4>Countries: <span id="modal-body-countries"></span></h4>
+                        <h4>Languages: <span id="modal-body-languages"></span></h4>
+                    </div>
+
+                    <a id="modal-body-link" class="modal__source-link" href="#" target="_blank">View More</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
 </body>
 </html>

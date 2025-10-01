@@ -12,7 +12,7 @@
     --clr-grey-dark: hsl(0, 0%, 55%);
     --clr-black: hsl(0, 0%, 6%);
 
-    /* Primary colors (Header, Footer etc.)*/
+    /* Primary colors (Header, Hero etc.)*/
     --clr-primary: hsl(48, 97%, 48%);
     --clr-primary-text: var(--clr-black);
 
@@ -661,6 +661,19 @@ https://www.w3schools.com/howto/howto_css_loader.asp
     100% {
         transform: rotate(360deg);
     }
+}
+
+/* ==== Footer Styles ==== */
+.footer {
+    color: var(--clr-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5%;
+    min-height: 45px;
+    margin-top: var(--space-xs);
+    text-align: center;
+    background-color: var(--clr-grey-dark);
 }
 
 /*Mobile Styles*/

@@ -161,7 +161,7 @@
     async function getDataFromOmdb(title, year) {
 
         try {
-            const imgUrl = `http://www.omdbapi.com/?&apikey=85b97b19&t=${encodeURIComponent(title)}&y=${encodeURIComponent(year)}&plot=full`;
+            const imgUrl = `https://www.omdbapi.com/?&apikey=85b97b19&t=${encodeURIComponent(title)}&y=${encodeURIComponent(year)}&plot=full`;
             const response = await fetch(imgUrl);
             const data = await response.json();
             return {

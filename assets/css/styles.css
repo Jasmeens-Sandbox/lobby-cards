@@ -299,6 +299,7 @@ main {
 
 .gallery__lobby-card-img {
     --_hAndW: 230px;
+    background-color: var(--clr-grey-dark);
     width: var(--_hAndW);
     height: var(--_hAndW);
     transition: 0.3s ease-in-out;

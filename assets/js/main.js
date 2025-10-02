@@ -4,7 +4,9 @@
     function show({ title, bodyImg, bodyText, bodyTextTitle, data }) {
         document.getElementById("modal-title").textContent = title;
         document.getElementById("modal-body-img-bg").src = bodyImg;
+        document.getElementById("modal-body-img-bg").alt = `${title} Background Image`;
         document.getElementById("modal-body-img-fg").src = bodyImg;
+        document.getElementById("modal-body-img-fg").alt = `${title} Lobby Card Image`;
         document.getElementById("modal-body-text").textContent = bodyText;
         document.getElementById("modal-body-text-title").textContent = bodyTextTitle;
         document.getElementById("modal-body-year").textContent = data?.year || "Unknown";
@@ -327,7 +329,7 @@
             wrapper.classList.add("animate", animationFade);
             let template = `
             <h3 class="gallery__lobby-card-title">${movie.title}</h3>
-            <img class="gallery__lobby-card-img animate ${animationFade}" id="${movie.item.id}" src="${movie.imageUrl}" />`;
+            <img class="gallery__lobby-card-img animate ${animationFade}" id="${movie.item.id}" src="${movie.imageUrl}" alt="${movie.title} Lobby Card Image" />`;
             wrapper.innerHTML = template;
 
             wrapper.querySelector('img').addEventListener('click', function () {
